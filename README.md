@@ -1,5 +1,5 @@
 # Embedded Tomcat Guide
-___Author: Malte B. P (s185139)___  
+___Author: Malte B. P.___  
 _Last updated 12/06-2020_
 
 This is a very small example / guide on how to use an _embedded_ Tomcat server instead of a standalone server Tomcat server.
@@ -14,9 +14,9 @@ _Things to note_:
 
 ## TLDR
 
-1. Add the dependencies and build section in `pom.xml` from this project to the `pom.xml` in your project
+1. Add the properties, dependencies and build sections from the `pom.xml` in this project to the `pom.xml` in your project
 2. Add the `Main` class to your project
-3. Adjust `WEBAPP_PATH` to the relative path of your website content
+3. Place your website content in `src/main/webapp` folder, or adjust `WEBAPP_PATH` in the `Main` class to the path of your website
 4. Done!
 
 ## Guide
@@ -35,14 +35,14 @@ __2. Setup the pom.xml:__ You should copy the following from the `pom.xml` file 
 
 - The entire `<build> ... </build>` section
 
-    > This is not important for running the project from IntelliJ, but ensures that your become .jar-file becomes _executable_.
+    > This is not important for running the project from IntelliJ, but ensures that your become .jar-file becomes _executable_ (this is also how your create an executable .jar file from any Maven project)
     
 - Remember to reimport Maven!
     
 __3. Add the `Main.java` from this project to your project__
 
  > This class contains the main method, you'll run to start Tomcat server, and deploys your content (i.e. website and Jersey application). 
- > If to place the class within a package, you should add the package to name to the `<mainClass>Main</mainClass>` element in the build section of you pom. I.e. if Main has the path `src/main/java/MyPackage/Main` you would write `<mainClass>MyPackage.Main</mainClass>` 
+ > If you place the class within a package, you should add the package name to the `<mainClass>Main</mainClass>` element in the build section of you `pom.xml`. I.e. `Main.java` has the path `src/main/java/MyPackage/Main.java` you would write `<mainClass>MyPackage.Main</mainClass>` .
 
 
 __4. Add content to your project:__
@@ -55,4 +55,6 @@ __4. Add content to your project:__
 
 __5. Done!__ Running the project like a "regular" IntelliJ project will now start the Tomcat server and deploy your content to the server!
 
- > The project can be compiled to a .jar and run like any other Maven project.
+ > The project can be compiled to a .jar and run like any other Maven project. To do this open `View -> Tool Windows -> Maven Projects`. In the window that pops up, go into the `Lifecycles`"folder", select from `clean` to `package`(inclusive), and press the run icon (green arrow). This will build your .jar-file which anyone who has the correct version of Java installed should be able to run
+ 
+ 

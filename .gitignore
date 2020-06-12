@@ -1,3 +1,5 @@
 target/
 temp/
 .idea/
+# Local file for testing at Malte
+run.sh

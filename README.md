@@ -14,9 +14,9 @@ _Things to note_:
 
 ## TLDR
 
-1. Add the properties, dependencies and build sections from the `pom.xml` in this project to the `pom.xml` in your project
-2. Add the `Main` class to your project
-3. Place your website content in `src/main/webapp` folder, or adjust `WEBAPP_PATH` in the `Main` class to the path of your website
+1. Copy the properties, dependencies and build sections from the `pom.xml` in this project to the `pom.xml` in your project
+2. Copy the `Main` class from this project to your project
+3. Place your website content (html, css, js etc.) in `src/main/webapp` folder, or adjust `WEBAPP_PATH` in the `Main` class to the path of your website
 4. Done!
 
 ## Guide
